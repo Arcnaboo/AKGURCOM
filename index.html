@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AkgurSoft</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="hero">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/Akgur.png" alt="AkgurSoft Logo" class="logo-img" />
+      </a>
+      <span class="brand-text">AkgurSoft</span>
+      <span class="lang-toggle">
+        <a href="#" data-lang="en" class="active">EN</a> |
+        <a href="#" data-lang="tr">TR</a>
+      </span>
+    </div>
+    <div class="nav-links">
+      <a href="#services" class="nav-link" data-en="Services" data-tr="Hizmetler">Services</a>
+      <a href="#projects" class="nav-link" data-en="Projects" data-tr="Projeler">Projects</a>
+      <a href="#founder" class="nav-link" data-en="Founder" data-tr="Kurucu">Founder</a>
+      <a href="#contact" class="nav-link" data-en="Contact" data-tr="İletişim">Contact</a>
+    </div>
+  </nav>
+  <div class="hero-content">
+    <h1 data-en="AI-Driven Consultancy for the Future" data-tr="Gelecek İçin Yapay Zekâ Destekli Danışmanlık">AI-Driven Consultancy for the Future</h1>
+    <p data-en="Tailored LLMs, Backend Systems, Smart Solutions." data-tr="Özel LLM'ler, Backend Sistemleri, Akıllı Çözümler.">Tailored LLMs, Backend Systems, Smart Solutions.</p>
+    <a href="#contact" class="btn" data-en="Contact Us" data-tr="İletişime Geçin">Contact Us</a>
+  </div>
+</header>
+
+<section id="services" class="section">
+  <h2 data-en="Our Services" data-tr="Hizmetlerimiz">Our Services</h2>
+  <ul class="services-list">
+    <li>🧠 AI Decision Systems</li>
+    <li>🏭 Factory Automation</li>
+    <li>🤖 LLM Assistant Integration</li>
+    <li>🚛 Logistics Optimization</li>
+    <li>🏢 Smart City Modules</li>
+  </ul>
+</section>
+
+<section id="projects" class="section alt">
+  <h2 data-en="Flagship Project: LogisticsGPT" data-tr="Ana Proje: LogisticsGPT">Flagship Project: LogisticsGPT</h2>
+  <img src="images/logo.png" alt="LogisticsGPT Logo" class="project-logo"/>
+  <p>
+    <a href="http://gotlogistics.net/" target="_blank" class="project-link">Visit gotlogistics.net →</a>
+  </p>
+</section>
+
+<section id="founder" class="section">
+  <h2 data-en="Meet the Founder" data-tr="Kurucumuz">Meet the Founder</h2>
+  <p data-en="Arda Akgür — AI systems architect and founder of AkgurSoft."
+     data-tr="Arda Akgür — AI sistem mimarı ve AkgurSoft'un kurucusu.">
+     Arda Akgür — AI systems architect and founder of AkgurSoft.
+  </p>
+  <blockquote data-en="“I don’t build tools. I build systems that think.”"
+              data-tr="“Araçlar yapmıyorum. Düşünen sistemler inşa ediyorum.”">
+    “I don’t build tools. I build systems that think.”
+  </blockquote>
+  <p>
+    <a href="https://www.linkedin.com/in/arcnaboo/" target="_blank" class="social-link">LinkedIn →</a>
+  </p>
+</section>
+
+<section id="contact" class="section contact">
+  <h2 data-en="Get in Touch" data-tr="İletişime Geçin">Get in Touch</h2>
+  <p>Email: <a href="mailto:founder@gotlogistics.net" class="email-link">founder@gotlogistics.net</a></p>
+</section>
+
+<footer>
+  © 2025 Akgür Matematik. All rights reserved.
+</footer>
+
+<script>
+  // Dil Değiştirme Fonksiyonu
+  document.querySelectorAll('.lang-toggle a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const lang = link.dataset.lang;
+      document.querySelector('.lang-toggle a.active').classList.remove('active');
+      link.classList.add('active');
+      document.querySelectorAll('[data-en], [data-tr]').forEach(el => {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = el.getAttribute(`data-${lang}`);
+        } else {
+          el.textContent = el.getAttribute(`data-${lang}`);
+        }
+      });
+    });
+  });
+
+  // Parallax Scroll Efekti
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    document.querySelector('.hero').style.backgroundPositionY = `${scrollY * 0.5}px`;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  color: #fff;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.hero {
+  padding-top: 80px;
+  background: linear-gradient(to right, #0057a0, #003c6e);
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+.hero-content {
+  text-align: center;
+  margin: auto;
+  z-index: 1;
+  padding: 0 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 32px;
+}
+
+.brand-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.lang-toggle a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin: 0 5px;
+}
+
+.lang-toggle a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+/* SECTIONS */
+.section {
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* BEYAZ ARKA PLANLI BÖLÜMLER (YAZILAR SİYAH) */
+#services, #founder {
+  background-color: white !important;
+  color: #000 !important;
+}
+
+#services a, #founder a,
+#services li, #founder li,
+#services h2, #founder h2,
+#services p, #founder p,
+#services blockquote, #founder blockquote {
+  color: #000 !important;
+}
+
+#services .services-list li {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-left: 3px solid #007bff;
+}
+
+#services .services-list li:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+#founder .social-link {
+  color: #007bff !important;
+}
+
+/* MAVİ BÖLÜMLER (ORİJİNAL) */
+.section.alt {
+  background-color: #003c6e !important;
+  color: white !important;
+}
+
+/* SERVICES */
+.services-list {
+  list-style: none;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.services-list li {
+  padding: 1rem 1.5rem;
+  margin: 0.8rem 0;
+  border-radius: 8px;
+  max-width: 400px;
+  transition: transform 0.3s;
+}
+
+.services-list li:hover {
+  transform: translateX(10px);
+}
+
+/* PROJECTS */
+.project-logo {
+  height: 80px;
+  margin: 1.5rem 0;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.project-link {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  padding-bottom: 2px;
+}
+
+/* FOOTER */
+footer {
+  background: #002544;
+  color: #ccc;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 4rem 1rem;
+  }
+}
